@@ -89,28 +89,57 @@
    ========================= */
 @media (max-width: 640px) {
     #footer {
+        background: transparent;
+        color: var(--text-color);
+        padding-block: 0;
+    }
+
+    /* Bloco laranja */
+    #footer .footer-content {
         background: var(--primary-color);
+        padding: 2rem 1rem;
+        width: 100vw;
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+        max-width: none;
     }
 
-    .footer-column a:hover,
-    .social-links a:hover {
-        color: #d48500;
-    }
-
+    /* Grid em coluna */
     .footer-content {
         grid-template-columns: 1fr;
         text-align: center;
     }
 
-    .footer-column h4,
-    .footer-brand h3,
+    /* Cores */
     .footer-column a,
     .social-links a {
-        color: white;
+        color: #fff;
     }
 
-    .footer-bottom {
-        background: #f8f8f8;
-        color: #333;
+    /* Hover leve */
+    .footer-column a:hover,
+    .social-links a:hover {
+        color: #d48500;
+    }
+
+    .footer-brand h3,
+    .footer-column h4 {
+        font-weight: var(--fw-bold);
+        color: var(--text-color);
+        margin-bottom: 0.75rem;
+    }
+
+    /* Faixa branca final */
+    #footer .footer-bottom {
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        text-align: center;
+        padding-block: 1rem;
+        margin: 0;
+        width: 100%;
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
     }
 }

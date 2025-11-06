@@ -1,0 +1,93 @@
+/* =========================
+   CONTACT
+   ========================= */
+
+#contact {
+  display: grid;
+  justify-items: center;
+  gap: 2rem;
+  padding-block: 4rem;
+}
+
+#contact .contact-header {
+  text-align: center;
+  max-width: 48rem;
+  display: grid;
+  gap: 0.75rem;
+}
+
+#contact .eyebrow {
+  color: var(--primary-color);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-sm);
+}
+
+#contact .lead {
+  color: var(--second-text-color);
+}
+
+/* Form */
+#contact .contact-form {
+  width: min(720px, 100%);
+  display: grid;
+  gap: 1rem;
+}
+
+/* Inputs */
+#contact .input,
+#contact .textarea {
+  width: 100%;
+  border: 1.5px solid #e6e6e6;
+  background: var(--bg-color);
+  border-radius: 10px;
+  padding: 1rem 1.125rem;
+  font: inherit;
+  color: var(--text-color);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#contact .input::placeholder,
+#contact .textarea::placeholder {
+  color: #a7a7a7;
+}
+
+#contact .input:focus-visible,
+#contact .textarea:focus-visible {
+  outline: none;
+  border-color: var(--primary-700, var(--primary-color));
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--primary-color) 20%, transparent);
+}
+
+/* Botão */
+#contact .btn-send {
+  justify-self: center;
+  border: none;
+  border-radius: 10px;
+  padding: 0.9rem 2.5rem;
+  background: var(--primary-color);
+  color: var(--light-text-color);
+  font-weight: var(--fw-bold);
+  cursor: pointer;
+  transition: transform 0.06s ease, box-shadow 0.2s ease, filter 0.2s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, .06);
+}
+
+#contact .btn-send:hover {
+  filter: brightness(1.05);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, .08);
+}
+
+#contact .btn-send:active {
+  transform: translateY(1px);
+}
+
+/* Layout pequeno */
+@media (max-width: 640px) {
+  #contact {
+    padding-block: 3rem;
+  }
+
+  #contact .contact-form {
+    gap: 0.875rem;
+  }
+}

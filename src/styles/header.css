@@ -1,0 +1,111 @@
+/* Header */
+.reverse-color {
+  color: var(--primary-color);
+  transition: color .2s ease, opacity .2s ease, transform .06s ease;
+}
+
+.reverse-color:hover {
+  color: var(--primary-700);
+}
+
+.reverse-color:active {
+  transform: translateY(1px);
+  opacity: .9;
+}
+
+.ml-lg {
+  margin-right: 2.875rem;
+}
+
+/* Links do menu (desktop) */
+header .desktop-only ul a {
+  color: var(--second-text-color);
+  transition: color .2s ease, opacity .2s ease, transform .06s ease;
+}
+
+header .desktop-only ul a:hover {
+  color: var(--primary-color);
+}
+
+header .desktop-only ul a:active {
+  transform: translateY(1px);
+  opacity: .9;
+}
+
+/* Mobile menu */
+.mobile-menu {
+  display: initial;
+  z-index: 3;
+}
+
+.mobile-menu-content {
+  position: absolute;
+  display: flex;
+  top: 0;
+  left: 0;
+  padding-top: 2.25rem;
+  width: 100vw;
+  height: 100vh;
+  background: var(--light-gray);
+}
+
+.mobile-menu-content ul {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.mobile-menu-content a {
+  font-size: var(--fs-lg);
+  color: var(--text-color);
+  transition: color .2s ease, transform .06s ease;
+}
+
+.mobile-menu-content a:hover {
+  color: var(--primary-color);
+}
+
+.btn-wrapper {
+  cursor: pointer;
+  padding: 2px;
+}
+
+@media (width >=1280px) {
+  header {
+    position: relative;
+    z-index: 1;
+  }
+
+  nav>img {
+    display: initial;
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+
+  .mobile-menu-content {
+    display: none;
+  }
+}
+/* LOGO TAMANHO  */
+.logo {
+  width: 200px;
+  height: auto;
+  transition: width 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .logo {
+    width: 160px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .logo {
+    width: 240px;
+  }
+}

@@ -26,9 +26,15 @@ import "../styles/pricing.css";
 import "../styles/contact.css";
 import "../styles/footer.css";
 
+type ToastState = {
+  type: "success" | "error";
+  message: string;
+} | null;
+
 export default function Home() {
   const [showSignup, setShowSignup] = useState(false);
   const [showLogin, setShowLogin] = useState(false);
+  const [toast, setToast] = useState<ToastState>(null);
 
   return (
     <main>
@@ -51,8 +57,8 @@ export default function Home() {
           </h1>
 
           <p>
-            Banho, tosa, consultas e produtos pet entregues na sua porta. Seu
-            amigo feliz e saudável, todos os dias.
+            Banho, tosa, consultas e produtos pet entregues na sua porta.
+            Seu amigo feliz e saudável, todos os dias.
           </p>
 
           <div className="flex gap-1">
@@ -90,7 +96,7 @@ export default function Home() {
             <div>
               <h3>Amor para Todos os Pets</h3>
               <p>
-                Atendemos cães, gatos e até pets exóticos!<br />
+                Atendemos cães, gatos e até pets exóticos! <br />
                 Cada um recebe atenção personalizada, respeitando suas
                 necessidades e temperamento.
               </p>
@@ -112,7 +118,12 @@ export default function Home() {
           </div>
           <div className="card">
             <span>
-              <img src={PersonApron} alt="ícone campeão" width={64} height={64} />
+              <img
+                src={PersonApron}
+                alt="ícone campeão"
+                width={64}
+                height={64}
+              />
             </span>
             <div>
               <h3>Equipe Especializada</h3>
@@ -134,9 +145,9 @@ export default function Home() {
             <h2>Cada pet é único pra nós!</h2>
           </span>
           <p>
-            Quem já trouxe seu pet pra <strong>PetCare</strong> sabe: aqui cada
-            banho, tosa e carinho são feitos com amor e profissionalismo. Veja o
-            que nossos clientes dizem sobre a experiência!
+            Quem já trouxe seu pet pra <strong>PetCare</strong> sabe: aqui
+            cada banho, tosa e carinho são feitos com amor e profissionalismo.
+            Veja o que nossos clientes dizem sobre a experiência!
           </p>
         </header>
 
@@ -149,8 +160,9 @@ export default function Home() {
               <img src={ProfileImageOne} alt="Imagem perfil cliente" />
               <span className="testimony">
                 <p>
-                  Levei meu golden pra tosa e o resultado foi incrível! O pelo
-                  ficou macio, cheiroso e ele saiu abanando o rabo de alegria.
+                  Levei meu golden pra tosa e o resultado foi incrível! O
+                  pelo ficou macio, cheiroso e ele saiu abanando o rabo de
+                  alegria.
                 </p>
               </span>
               <span className="rating" aria-label="4 de 5 estrelas">
@@ -176,9 +188,9 @@ export default function Home() {
               <img src={ProfileImageTwo} alt="Imagem perfil cliente" />
               <span className="testimony">
                 <p>
-                  Atendimento excelente! O ambiente é limpo e os profissionais
-                  tratam os animais com tanto carinho que meu pug nem quis ir
-                  embora.
+                  Atendimento excelente! O ambiente é limpo e os
+                  profissionais tratam os animais com tanto carinho que
+                  meu pug nem quis ir embora.
                 </p>
               </span>
               <span className="rating" aria-label="4 de 5 estrelas">
@@ -200,7 +212,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* bloco 2 (repetição p/ loop contínuo) */}
+          {/* bloco 2 */}
           <div className="carousel-content">
             <div className="carousel-card">
               <img src={ProfileImageThree} alt="Imagem perfil cliente" />
@@ -232,9 +244,9 @@ export default function Home() {
               <img src={ProfileImageThree} alt="Imagem perfil cliente" />
               <span className="testimony">
                 <p>
-                  Meu gato sempre teve medo de banho, mas na PetCare ele ficou
-                  super calmo! Dá pra ver que eles entendem de verdade sobre
-                  pets.
+                  Meu gato sempre teve medo de banho, mas na PetCare ele
+                  ficou super calmo! Dá pra ver que eles entendem de
+                  verdade sobre pets.
                 </p>
               </span>
               <span className="rating" aria-label="4 de 5 estrelas">
@@ -278,25 +290,13 @@ export default function Home() {
             <span className="hr" />
 
             <span className="features">
-              <img
-                src={Check}
-                alt=""
-                width={24}
-                height={24}
-                aria-hidden="true"
-              />
+              <img src={Check} alt="" width={24} height={24} aria-hidden="true" />
               <p>Retire na loja</p>
             </span>
 
             <ul className="features" aria-label="Benefícios do plano básico">
               <li className="features">
-                <img
-                  src={Check}
-                  alt=""
-                  width={24}
-                  height={24}
-                  aria-hidden="true"
-                />
+                <img src={Check} alt="" width={24} height={24} aria-hidden="true" />
                 <p>Apenas 1 por CPF</p>
               </li>
             </ul>
@@ -326,35 +326,17 @@ export default function Home() {
             <span className="hr" />
 
             <span className="features">
-              <img
-                src={Check}
-                alt=""
-                width={24}
-                height={24}
-                aria-hidden="true"
-              />
+              <img src={Check} alt="" width={24} height={24} aria-hidden="true" />
               <p>4 banhos por mês</p>
             </span>
 
             <span className="features">
-              <img
-                src={Check}
-                alt=""
-                width={24}
-                height={24}
-                aria-hidden="true"
-              />
+              <img src={Check} alt="" width={24} height={24} aria-hidden="true" />
               <p>Check-up rápido com veterinário parceiro</p>
             </span>
 
             <span className="features">
-              <img
-                src={Check}
-                alt=""
-                width={24}
-                height={24}
-                aria-hidden="true"
-              />
+              <img src={Check} alt="" width={24} height={24} aria-hidden="true" />
               <p>Entrega e busca em domicílio</p>
             </span>
           </div>
@@ -367,9 +349,9 @@ export default function Home() {
           <p className="eyebrow">Envie sua dúvida</p>
           <h2>Entre em contato</h2>
           <p className="lead">
-            Entre em contato, estamos dispostos a tirar qualquer dúvida, seja um
-            orçamento, uma dúvida técnica de algum de nossos serviços. Estamos à
-            disposição para responder. 😊
+            Entre em contato, estamos dispostos a tirar qualquer dúvida,
+            seja um orçamento, uma dúvida técnica de algum de nossos serviços.
+            Estamos à disposição para responder. 😊
           </p>
         </header>
 
@@ -378,15 +360,18 @@ export default function Home() {
           onSubmit={async (e) => {
             e.preventDefault();
             const form = e.currentTarget as HTMLFormElement;
-            const email = (
-              form.elements.namedItem("email") as HTMLInputElement
-            ).value;
+            const email = (form.elements.namedItem("email") as HTMLInputElement)
+              .value;
             const message = (
               form.elements.namedItem("message") as HTMLTextAreaElement
             ).value;
 
             if (!email.trim() || !message.trim()) {
-              alert("Preencha o e-mail e a mensagem, por favor.");
+              setToast({
+                type: "error",
+                message: "Preencha o e-mail e a mensagem, por favor.",
+              });
+              setTimeout(() => setToast(null), 4000);
               return;
             }
 
@@ -395,28 +380,30 @@ export default function Home() {
                 "/.netlify/functions/send-contact",
                 {
                   method: "POST",
-                  headers: {
-                    "Content-Type": "application/json",
-                  },
+                  headers: { "Content-Type": "application/json" },
                   body: JSON.stringify({ email, message }),
                 }
               );
 
               if (!response.ok) {
-                console.error("Erro na função:", await response.text());
-                alert(
-                  "Erro ao enviar mensagem. Tente novamente em alguns instantes."
-                );
-                return;
+                throw new Error("Erro ao enviar");
               }
 
-              alert("Mensagem enviada com sucesso! Em breve entraremos em contato.");
               form.reset();
+              setToast({
+                type: "success",
+                message:
+                  "Mensagem enviada com sucesso! Em breve entraremos em contato.",
+              });
             } catch (err) {
               console.error(err);
-              alert(
-                "Erro de conexão ao enviar a mensagem. Verifique sua internet e tente novamente."
-              );
+              setToast({
+                type: "error",
+                message:
+                  "Erro ao enviar mensagem. Tente novamente em alguns instantes.",
+              });
+            } finally {
+              setTimeout(() => setToast(null), 4000);
             }
           }}
         >
@@ -529,10 +516,7 @@ export default function Home() {
       />
 
       {showLogin && (
-        <div
-          className="signup-overlay"
-          onClick={() => setShowLogin(false)}
-        >
+        <div className="signup-overlay" onClick={() => setShowLogin(false)}>
           <div
             className="signup-modal"
             onClick={(e) => e.stopPropagation()}
@@ -557,7 +541,11 @@ export default function Home() {
                   ).entries()
                 );
                 console.log("Login:", data);
-                alert("Login efetuado!");
+                setToast({
+                  type: "success",
+                  message: "Login efetuado! (simulação)",
+                });
+                setTimeout(() => setToast(null), 4000);
                 setShowLogin(false);
               }}
             >
@@ -589,6 +577,13 @@ export default function Home() {
               </p>
             </form>
           </div>
+        </div>
+      )}
+
+      {/* TOAST BONITINHO */}
+      {toast && (
+        <div className={`toast toast-${toast.type}`}>
+          {toast.message}
         </div>
       )}
     </main>

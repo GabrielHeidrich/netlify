@@ -9,7 +9,12 @@ import "../styles/utility.css";
 
 import Button from "./Button";
 
-export default function Header() {
+type HeaderProps = {
+  onOpenSignup?: () => void;
+  onOpenLogin?: () => void;
+};
+
+export default function Header({ onOpenSignup, onOpenLogin }: HeaderProps) {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
 
   return (
@@ -17,6 +22,7 @@ export default function Header() {
       <nav className="flex items-center justify-between">
         <img src={Logo} alt="Logo PetCare" className="logo" />
 
+        {/* links desktop */}
         <div className="desktop-only">
           <ul className="flex gap-1">
             <li><a href="#">Home</a></li>
@@ -27,13 +33,25 @@ export default function Header() {
           </ul>
         </div>
 
+        {/* ações desktop */}
         <div className="desktop-only">
           <div className="flex items-center">
-            <a className="reverse-color ml-lg" href="">Login</a>
-            <Button text="Cadastre-se" />
+            <a
+              className="reverse-color ml-lg"
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                onOpenLogin?.();
+              }}
+            >
+              Login
+            </a>
+
+            <Button text="Cadastre-se" onClick={onOpenSignup} />
           </div>
         </div>
 
+        {/* menu mobile */}
         <div className="mobile-menu">
           {showMobileMenu ? (
             <div className="mobile-menu-content">
@@ -44,7 +62,20 @@ export default function Header() {
                   <li><a href="#testimonials">Depoimentos</a></li>
                   <li><a href="#pricing">Preços</a></li>
                   <li><a href="#contact">Contato</a></li>
+                  <li>
+                    <a
+                      href="#"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setShowMobileMenu(false);
+                        onOpenLogin?.();
+                      }}
+                    >
+                      Login
+                    </a>
+                  </li>
                 </ul>
+
                 <span
                   onClick={() => setShowMobileMenu(false)}
                   className="btn-wrapper"

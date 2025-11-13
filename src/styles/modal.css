@@ -1,0 +1,162 @@
+/* =========================
+   MODALS GERAIS (overlay + animação + estrutura)
+   ========================= */
+
+/* Backdrop / Overlay */
+.modal-backdrop,
+.signup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.5);
+  display: grid;
+  place-items: center;
+  z-index: 9999;
+  padding: 1rem;
+}
+
+/* Card base */
+.modal-card,
+.signup-modal {
+  width: 100%;
+  max-width: 520px;             /* login */
+  background: var(--bg-color, #fff);
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.25);
+  overflow: hidden;
+  animation: modalIn .18s ease-out;
+}
+
+@keyframes modalIn {
+  from { transform: translateY(8px); opacity: .9 }
+  to   { transform: translateY(0);   opacity: 1   }
+}
+
+/* Cabeçalho */
+.modal-header,
+.signup-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background: #fff;
+  border-bottom: 1px solid rgba(0,0,0,.06);
+}
+
+.modal-header h3,
+.signup-header h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: var(--text-color);
+  font-weight: var(--fw-bold, 700);
+}
+
+.modal-close,
+.signup-header button {
+  border: 0;
+  background: transparent;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--second-text-color);
+}
+
+/* =========================
+   LOGIN (usa .modal-* )
+   ========================= */
+
+.modal-form {
+  display: grid;
+  gap: .875rem;
+  padding: 1rem 1.25rem 1.25rem;
+}
+
+.modal-form label {
+  display: grid;
+  gap: .375rem;
+  font-weight: var(--fw-md, 600);
+  color: var(--text-color);
+}
+
+.modal-form input {
+  height: 46px;
+  border-radius: 10px;
+  border: 1px solid #e7e7e7;
+  padding: 0 .875rem;
+  background: #fff;
+  color: #111827;
+  outline: none;
+}
+
+.modal-form input:focus-visible {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary-color) 25%, transparent);
+}
+
+.modal-submit {
+  margin-top: .5rem;
+  height: 48px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--primary-color);
+  color: #fff;
+  font-weight: var(--fw-bold, 700);
+  cursor: pointer;
+}
+.modal-submit:hover { filter: brightness(1.05); }
+
+.modal-note {
+  margin: 0;
+  padding: 0 1.25rem 1.25rem;
+  font-size: var(--fs-sm, .875rem);
+  color: var(--second-text-color);
+}
+
+/* =========================
+   CADASTRO (usa .signup-* )
+   ========================= */
+
+.signup-modal { max-width: 720px; }
+
+.signup-form {
+  display: grid;
+  gap: 14px;
+  padding: 20px;
+}
+
+.signup-form label { display: grid; gap: 6px; }
+.signup-form span  { color: var(--text-color); font-weight: var(--fw-md); }
+
+.signup-form input,
+.signup-form textarea {
+  width: 100%;
+  border: 1px solid rgba(0,0,0,.15);
+  border-radius: 10px;
+  padding: 12px 14px;
+  background: #fff;
+  color: var(--text-color);
+}
+
+.signup-submit {
+  border: 0;
+  border-radius: 12px;
+  padding: 14px 18px;
+  background: var(--primary-color);
+  color: #fff;
+  font-weight: var(--fw-bold);
+  cursor: pointer;
+}
+.signup-submit:hover { filter: brightness(0.98); }
+
+.signup-terms {
+  margin: 6px 0 0;
+  font-size: var(--fs-sm);
+  color: var(--second-text-color);
+  text-align: center;
+}
+.signup-terms a { color: var(--primary-color); text-decoration: underline; }
+
+/* Responsivo */
+@media (max-width: 560px) {
+  .signup-modal { width: min(96vw, 560px); }
+  .signup-form  { padding: 16px; }
+}

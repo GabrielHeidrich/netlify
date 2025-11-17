@@ -118,12 +118,7 @@ export default function Home() {
           </div>
           <div className="card">
             <span>
-              <img
-                src={PersonApron}
-                alt="ícone campeão"
-                width={64}
-                height={64}
-              />
+              <img src={PersonApron} alt="ícone campeão" width={64} height={64} />
             </span>
             <div>
               <h3>Equipe Especializada</h3>
@@ -170,12 +165,7 @@ export default function Home() {
                 <img src={Star} alt="estrela" width={22} height={20} />
                 <img src={Star} alt="estrela" width={22} height={20} />
                 <img src={Star} alt="estrela" width={22} height={20} />
-                <img
-                  src={StarOuter}
-                  alt="estrela vazia"
-                  width={20}
-                  height={22}
-                />
+                <img src={StarOuter} alt="estrela vazia" width={20} height={22} />
               </span>
               <span className="names">
                 <p>Ana Beatriz</p>
@@ -198,12 +188,7 @@ export default function Home() {
                 <img src={Star} alt="estrela" width={22} height={20} />
                 <img src={Star} alt="estrela" width={22} height={20} />
                 <img src={Star} alt="estrela" width={22} height={20} />
-                <img
-                  src={StarOuter}
-                  alt="estrela vazia"
-                  width={20}
-                  height={22}
-                />
+                <img src={StarOuter} alt="estrela vazia" width={20} height={22} />
               </span>
               <span className="names">
                 <p>Ana Martins</p>
@@ -227,12 +212,7 @@ export default function Home() {
                 <img src={Star} alt="estrela" width={22} height={20} />
                 <img src={Star} alt="estrela" width={22} height={20} />
                 <img src={Star} alt="estrela" width={22} height={20} />
-                <img
-                  src={StarOuter}
-                  alt="estrela vazia"
-                  width={20}
-                  height={22}
-                />
+                <img src={StarOuter} alt="estrela vazia" width={20} height={22} />
               </span>
               <span className="names">
                 <p>Joana Viera</p>
@@ -241,7 +221,7 @@ export default function Home() {
             </div>
 
             <div className="carousel-card">
-              <img src={ProfileImageThree} alt="Imagem perfil cliente" />
+              <img src={ProfileImageTwo} alt="Imagem perfil cliente" />
               <span className="testimony">
                 <p>
                   Meu gato sempre teve medo de banho, mas na PetCare ele
@@ -254,12 +234,7 @@ export default function Home() {
                 <img src={Star} alt="estrela" width={22} height={20} />
                 <img src={Star} alt="estrela" width={22} height={20} />
                 <img src={Star} alt="estrela" width={22} height={20} />
-                <img
-                  src={StarOuter}
-                  alt="estrela vazia"
-                  width={20}
-                  height={22}
-                />
+                <img src={StarOuter} alt="estrela vazia" width={20} height={22} />
               </span>
               <span className="names">
                 <p>Marina Lopes</p>
@@ -317,7 +292,7 @@ export default function Home() {
             </span>
 
             <span className="price" aria-label="Preço do plano premium">
-              <h2>R$ 109,90</h2>
+              <h2>R$ 149,90</h2>
               <p>/mês</p>
             </span>
 
@@ -437,7 +412,7 @@ export default function Home() {
           <div className="footer-brand">
             <h3>PetCare</h3>
             <div className="social-links">
-              <a href="#" aria-label="Instagram">
+              <a href="https://www.instagram.com/gabriel_heidrich/" aria-label="Instagram">
                 <i className="fa-brands fa-instagram"></i>
               </a>
               <a href="#" aria-label="Facebook">
@@ -580,7 +555,7 @@ export default function Home() {
         </div>
       )}
 
-      {/* TOAST BONITINHO */}
+      {/* TOAST */}
       {toast && (
         <div className={`toast toast-${toast.type}`}>
           {toast.message}

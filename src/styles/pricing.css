@@ -23,7 +23,7 @@
   font-weight: var(--fw-bold);
 }
 
-/* grid / colunas dos cards (reaproveita .even-columns do teu utility.css) */
+/* grid / colunas dos cards (reaproveita .even-columns do utility.css) */
 #pricing .even-columns {
   gap: 1.5rem;
 }

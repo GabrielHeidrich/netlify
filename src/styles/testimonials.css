@@ -1,5 +1,5 @@
 /* =========================
-   TESTIMONIALS — PetCare
+   TESTIMONIALS
    ========================= */
 
 #testimonials {
@@ -131,7 +131,7 @@
   }
 
   #testimonials .carousel-card {
-    min-width: 30rem;       /* cards largos no desktop */
-    min-height: 26.875rem;  /* mesma altura do mock */
+    min-width: 30rem;
+    min-height: 26.875rem;
   }
 }
